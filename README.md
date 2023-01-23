@@ -8,7 +8,7 @@ A realtime acoustic bird classification system for the Nvidia Jetson Nano (2GB)
 </p>
 
 ## Introduction
-BirdNET-JetsonNano is built on Birdnet-Pi , which in turn, is build upon the (deprecated) [TFLite version of BirdNET](https://github.com/kahst/BirdNET-Lite) by [**@kahst**](https://github.com/kahst) <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg"></a> using [pre-built TFLite binaries](https://github.com/PINTO0309/TensorflowLite-bin) by [**@PINTO0309**](https://github.com/PINTO0309) . It is able to recognize bird sounds from a USB microphone or sound card in realtime and share its data with the rest of the world.
+BirdNET-JetsonNano is built on Birdnet-Pi , which in turn, is build upon the (deprecated) [TFLite version of BirdNET](https://github.com/kahst/BirdNET-Lite) by [**@kahst**](https://github.com/kahst) <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg"></a> using pre-built TFLite binaries by [Q-engineering](https://qengineering.eu/install-tensorflow-2.4.0-on-jetson-nano.html) . It is able to recognize bird sounds from a USB microphone or sound card in realtime and share its data with the rest of the world.
 
 
 ## Active BirdNet-PI Installations 
