@@ -10,7 +10,7 @@ birdnet_conf=$my_dir/birdnet.conf
 install_config() {
   cat << EOF > $birdnet_conf
 ################################################################################
-#                    Configuration settings for BirdNET-Pi                     #
+#                    Configuration settings for BirdNET-JetsonNano                     #
 ################################################################################
 
 # Optional: Site Title for banner
@@ -28,7 +28,7 @@ LATITUDE=$(curl -s4 ifconfig.co/json | jq .latitude)
 LONGITUDE=$(curl -s4 ifconfig.co/json | jq .longitude)
 
 #---------------------  BirdWeather Station Information -----------------------#
-#_____________The variable below can be set to have your BirdNET-Pi____________#
+#_____________The variable below can be set to have your BirdNET-JetsonNano____________#
 #__________________also act as a BirdWeather listening station_________________#
 
 BIRDWEATHER_ID=
@@ -62,7 +62,7 @@ ICE_PWD=birdnetpi
 
 ## BIRDNETPI_URL is the URL where the extractions, data-set, and live-stream
 ## will be web-hosted. If you do not own a domain, or would just prefer to keep
-## the BirdNET-Pi on your local network, keep this EMPTY.
+## the BirdNET-JetsonNano on your local network, keep this EMPTY.
 
 BIRDNETPI_URL=
 
@@ -70,13 +70,13 @@ BIRDNETPI_URL=
 
 ## If RTSP_STREAM is set, the system will use the RTSP stream as its audio
 ## source instead of recording its own audio. If this variable is kept empty,
-## BirdNET-Pi will default to recording its own audio.
+## BirdNET-JetsonNano will default to recording its own audio.
 
 RTSP_STREAM=
 
 #-----------------------  Apprise Miscellanous Configuration -------------------#
 
-APPRISE_NOTIFICATION_TITLE="New BirdNET-Pi Detection"
+APPRISE_NOTIFICATION_TITLE="New BirdNET-JetsonNano Detection"
 APPRISE_NOTIFICATION_BODY="A \$sciname \$comname was just detected with a confidence of \$confidence"
 APPRISE_NOTIFY_EACH_DETECTION=0
 APPRISE_NOTIFY_NEW_SPECIES=0
@@ -209,7 +209,7 @@ SILENCE_UPDATE_INDICATOR=0
 ## These are just for debugging
 LAST_RUN=
 THIS_RUN=
-IDFILE=$HOME/BirdNET-Pi/IdentifiedSoFar.txt
+IDFILE=$HOME/BirdNET-JetsonNano/IdentifiedSoFar.txt
 EOF
 }
 

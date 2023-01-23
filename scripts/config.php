@@ -92,10 +92,10 @@ if(isset($_GET["latitude"])){
     $home = trim(shell_exec("awk -F: '/1000/{print $6}' /etc/passwd"));
 
     // Archive old language file
-    syslog_shell_exec("cp -f $home/BirdNET-Pi/model/labels.txt $home/BirdNET-Pi/model/labels.txt.old", $user);
+    syslog_shell_exec("cp -f $home/BirdNET-JetsonNano/model/labels.txt $home/BirdNET-JetsonNano/model/labels.txt.old", $user);
 
     // Install new language label file
-    syslog_shell_exec("$home/BirdNET-Pi/scripts/install_language_label.sh -l $language", $user);
+    syslog_shell_exec("$home/BirdNET-JetsonNano/scripts/install_language_label.sh -l $language", $user);
 
     syslog(LOG_INFO, "Successfully changed language to '$language'");
   }
@@ -151,7 +151,7 @@ if(isset($_GET["latitude"])){
     $home = shell_exec("awk -F: '/1000/{print $6}' /etc/passwd");
     $home = trim($home);
 
-    $appriseconfig = fopen($home."/BirdNET-Pi/apprise.txt", "w");
+    $appriseconfig = fopen($home."/BirdNET-JetsonNano/apprise.txt", "w");
     fwrite($appriseconfig, $apprise_input);
   }
 
@@ -239,7 +239,7 @@ if(isset($_GET['sendtest']) && $_GET['sendtest'] == "true") {
   $body = str_replace("\$overlap", $overlap, $body);
   $body = str_replace("\$flickrimage", $exampleimage, $body);
 
-  echo "<pre class=\"bash\">".shell_exec($home."/BirdNET-Pi/birdnet/bin/apprise -vv -t '".$title."' -b '".$body."' ".$attach." ".$cf." ")."</pre>";
+  echo "<pre class=\"bash\">".shell_exec($home."/BirdNET-JetsonNano/birdnet/bin/apprise -vv -t '".$title."' -b '".$body."' ".$attach." ".$cf." ")."</pre>";
 
   die();
 }
@@ -261,8 +261,8 @@ if (file_exists('./scripts/thisrun.txt')) {
 $user = shell_exec("awk -F: '/1000/{print $1}' /etc/passwd");
 $home = shell_exec("awk -F: '/1000/{print $6}' /etc/passwd");
 $home = trim($home);
-if (file_exists($home."/BirdNET-Pi/apprise.txt")) {
-  $apprise_config = file_get_contents($home."/BirdNET-Pi/apprise.txt");
+if (file_exists($home."/BirdNET-JetsonNano/apprise.txt")) {
+  $apprise_config = file_get_contents($home."/BirdNET-JetsonNano/apprise.txt");
 } else {
   $apprise_config = "";
 }
@@ -363,13 +363,13 @@ https://discordapp.com/api/webhooks/{WebhookID}/{WebhookToken}
       <input name="apprise_notification_title" type="text" value="<?php print($config['APPRISE_NOTIFICATION_TITLE']);?>" /><br>
       <label for="apprise_notification_body">Notification Body: </label>
       <input name="apprise_notification_body" type="text" value='<?php print($config['APPRISE_NOTIFICATION_BODY']);?>' /><br>
-      <input type="checkbox" name="apprise_notify_new_species" <?php if($config['APPRISE_NOTIFY_NEW_SPECIES'] == 1 && filesize($home."/BirdNET-Pi/apprise.txt") != 0) { echo "checked"; };?> >
+      <input type="checkbox" name="apprise_notify_new_species" <?php if($config['APPRISE_NOTIFY_NEW_SPECIES'] == 1 && filesize($home."/BirdNET-JetsonNano/apprise.txt") != 0) { echo "checked"; };?> >
       <label for="apprise_notify_new_species">Notify each new infrequent species detection (<5 visits per week)</label><br>
-      <input type="checkbox" name="apprise_notify_new_species_each_day" <?php if($config['APPRISE_NOTIFY_NEW_SPECIES_EACH_DAY'] == 1 && filesize($home."/BirdNET-Pi/apprise.txt") != 0) { echo "checked"; };?> >
+      <input type="checkbox" name="apprise_notify_new_species_each_day" <?php if($config['APPRISE_NOTIFY_NEW_SPECIES_EACH_DAY'] == 1 && filesize($home."/BirdNET-JetsonNano/apprise.txt") != 0) { echo "checked"; };?> >
       <label for="apprise_notify_new_species_each_day">Notify each species first detection of the day</label><br>
-      <input type="checkbox" name="apprise_notify_each_detection" <?php if($config['APPRISE_NOTIFY_EACH_DETECTION'] == 1 && filesize($home."/BirdNET-Pi/apprise.txt") != 0) { echo "checked"; };?> >
+      <input type="checkbox" name="apprise_notify_each_detection" <?php if($config['APPRISE_NOTIFY_EACH_DETECTION'] == 1 && filesize($home."/BirdNET-JetsonNano/apprise.txt") != 0) { echo "checked"; };?> >
       <label for="apprise_weekly_report">Notify each new detection</label><br>
-      <input type="checkbox" name="apprise_weekly_report" <?php if($config['APPRISE_WEEKLY_REPORT'] == 1 && filesize($home."/BirdNET-Pi/apprise.txt") != 0) { echo "checked"; };?> >
+      <input type="checkbox" name="apprise_weekly_report" <?php if($config['APPRISE_WEEKLY_REPORT'] == 1 && filesize($home."/BirdNET-JetsonNano/apprise.txt") != 0) { echo "checked"; };?> >
       <label for="apprise_weekly_report">Send weekly report</label><br>
 
       <hr>

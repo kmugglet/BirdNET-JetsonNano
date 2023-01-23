@@ -7,7 +7,7 @@ set -x
 source /etc/birdnet/birdnet.conf
 USER=$(awk -F: '/1000/ {print $1}' /etc/passwd)
 HOME=$(awk -F: '/1000/ {print $6}' /etc/passwd)
-my_dir=${HOME}/BirdNET-Pi/scripts
+my_dir=${HOME}/BirdNET-JetsonNano/scripts
 echo "Stopping services"
 sudo systemctl stop birdnet_recording.service
 sudo systemctl stop birdnet_analysis.service

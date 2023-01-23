@@ -55,9 +55,9 @@ if(isset($_GET['species'])){
 $user = shell_exec("awk -F: '/1000/{print $1}' /etc/passwd");
 $home = shell_exec("awk -F: '/1000/{print $6}' /etc/passwd");
 $home = trim($home);
-if(!file_exists($home."/BirdNET-Pi/scripts/disk_check_exclude.txt") || strpos(file_get_contents($home."/BirdNET-Pi/scripts/disk_check_exclude.txt"),"##start") === false) {
-  file_put_contents($home."/BirdNET-Pi/scripts/disk_check_exclude.txt", "");
-  file_put_contents($home."/BirdNET-Pi/scripts/disk_check_exclude.txt", "##start\n##end\n");
+if(!file_exists($home."/BirdNET-JetsonNano/scripts/disk_check_exclude.txt") || strpos(file_get_contents($home."/BirdNET-JetsonNano/scripts/disk_check_exclude.txt"),"##start") === false) {
+  file_put_contents($home."/BirdNET-JetsonNano/scripts/disk_check_exclude.txt", "");
+  file_put_contents($home."/BirdNET-JetsonNano/scripts/disk_check_exclude.txt", "##start\n##end\n");
 }
 ?>
 
@@ -66,7 +66,7 @@ if(!file_exists($home."/BirdNET-Pi/scripts/disk_check_exclude.txt") || strpos(fi
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BirdNET-Pi DB</title>
+  <title>BirdNET-JetsonNano DB</title>
 <style>
 </style>
 
@@ -177,7 +177,7 @@ while($results=$result3->fetchArray(SQLITE3_ASSOC)){
   if (! empty($config["FLICKR_API_KEY"])) {
     // only open the file once per script execution
     if(!isset($lines)) {
-      $lines = file($home."/BirdNET-Pi/model/labels_flickr.txt");
+      $lines = file($home."/BirdNET-JetsonNano/model/labels_flickr.txt");
     }
     // convert sci name to English name
     foreach($lines as $line){ 
@@ -231,8 +231,8 @@ array_push($excludelines, $results['Date']."/".$comname."/".$results['File_Name'
 <?php
 }
 
-$file = file_get_contents($home."/BirdNET-Pi/scripts/disk_check_exclude.txt");
-file_put_contents($home."/BirdNET-Pi/scripts/disk_check_exclude.txt", "##start"."\n".implode("\n",$excludelines)."\n".substr($file, strpos($file, "##end")));
+$file = file_get_contents($home."/BirdNET-JetsonNano/scripts/disk_check_exclude.txt");
+file_put_contents($home."/BirdNET-JetsonNano/scripts/disk_check_exclude.txt", "##start"."\n".implode("\n",$excludelines)."\n".substr($file, strpos($file, "##end")));
 ?>
     </table>
       </form>

@@ -9,7 +9,7 @@ lastcheck="$(mktemp)"
 
 cp ${IDFILE} ${lastcheck}
 
-$HOME/BirdNET-Pi/scripts/update_species.sh
+$HOME/BirdNET-JetsonNano/scripts/update_species.sh
 
 if ! diff ${IDFILE} ${lastcheck} &> /dev/null;then
   SPECIES=$(diff ${IDFILE} ${lastcheck} \
@@ -20,8 +20,8 @@ if ! diff ${IDFILE} ${lastcheck} &> /dev/null;then
   echo "Sending the following notification:
 ${NOTIFICATION}"
 
-  if [ -s $HOME/BirdNET-Pi/apprise.txt ];then
-    $HOME/BirdNET-Pi/birdnet/bin/apprise -vv -t 'New Species Detected' -b "${NOTIFICATION}" --config=$HOME/BirdNET-Pi/apprise.txt
+  if [ -s $HOME/BirdNET-JetsonNano/apprise.txt ];then
+    $HOME/BirdNET-JetsonNano/birdnet/bin/apprise -vv -t 'New Species Detected' -b "${NOTIFICATION}" --config=$HOME/BirdNET-JetsonNano/apprise.txt
   fi
 fi
 

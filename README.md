@@ -1,7 +1,7 @@
-<h1 align="center"><a href="https://github.com/mcguirepr89/BirdNET-Pi/blob/main/LICENSE">Review the license!!</a></h1>
-<h1 align="center">You may not use BirdNET-Pi to develop a commercial product!!!!</h1>
+<h1 align="center"><a href="https://github.com/kmugglet/BirdNET-JetsonNano/blob/main/LICENSE">Review the license!!</a></h1>
+<h1 align="center">You may not use BirdNET-JetsonNano to develop a commercial product!!!!</h1>
 <h1 align="center">
-  BirdNET-Pi
+  BirdNET-JetsonNano
 </h1>
 <p align="center">
 A realtime acoustic bird classification system for the Raspberry Pi 4B, 3B+, and 0W2
@@ -14,8 +14,10 @@ Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from 
 </p>
 
 ## Introduction
-BirdNET-Pi is built on the (deprecated) [TFLite version of BirdNET](https://github.com/kahst/BirdNET-Lite) by [**@kahst**](https://github.com/kahst) <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg"></a> using [pre-built TFLite binaries](https://github.com/PINTO0309/TensorflowLite-bin) by [**@PINTO0309**](https://github.com/PINTO0309) . It is able to recognize bird sounds from a USB microphone or sound card in realtime and share its data with the rest of the world.
+BirdNET-JetsonNano is built on Birdnet-Pi , which in turn, is build upon the (deprecated) [TFLite version of BirdNET](https://github.com/kahst/BirdNET-Lite) by [**@kahst**](https://github.com/kahst) <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg"></a> using [pre-built TFLite binaries](https://github.com/PINTO0309/TensorflowLite-bin) by [**@PINTO0309**](https://github.com/PINTO0309) . It is able to recognize bird sounds from a USB microphone or sound card in realtime and share its data with the rest of the world.
 
+
+## Active BirdNet-PI Installations 
 Check out birds from around the world
 - [BirdWeather](https://app.birdweather.com)<br>
 - [Johannesburg, South Africa](https://joburg.birdnetpi.com)<br>
@@ -29,8 +31,8 @@ Check out birds from around the world
 - [Occoquan, Virginia, United States](https://occoquanva.birdnetpi.com)
 - [Cambridge, Massachusetts, United States](https://cambridgema.birdnetpi.com)
 
-[Share your installation!!](https://github.com/mcguirepr89/BirdNET-Pi/wiki/Sharing-Your-BirdNET-Pi)
-Have a public installation not in the list above? Let me know!! I'd be happy to add it.
+<del>[Share your installation!!](https://github.com/kmugglet/BirdNET-JetsonNano/wiki/Sharing-Your-BirdNET-JetsonNano)
+Have a public installation not in the list above? Let me know!! I'd be happy to add it.</del>
 
 Currently listening in these countries . . . that I know of . . .
 - The United States
@@ -69,7 +71,7 @@ Currently listening in these countries . . . that I know of . . .
 * Spectrograms available for all extractions
 * Live audio stream & spectrogram
 * Automatic disk space management, where old audio files are periodically purged
-* [BirdWeather](https://app.birdweather.com) integration -- you can request a BirdWeather ID from BirdNET-Pi's "Tools" > "Settings" page
+* [BirdWeather](https://app.birdweather.com) integration -- you can request a BirdWeather ID from BirdNET-JetsonNano's "Tools" > "Settings" page
 * Web interface access to all data and logs provided by [Caddy](https://caddyserver.com)
 * [GoTTY](https://github.com/yudai/gotty) Web Terminal
 * [Tiny File Manager](https://tinyfilemanager.github.io/)
@@ -86,25 +88,29 @@ Currently listening in these countries . . . that I know of . . .
 * A USB Microphone or Sound Card
 
 ## Installation
-[A comprehensive installation guide is available here](https://github.com/mcguirepr89/BirdNET-Pi/wiki/Installation-Guide).
+[A comprehensive installation guide is available here](https://github.com/kmugglet/BirdNET-JetsonNano/wiki/Installation-Guide).
 
-Please note that installing BirdNET-Pi on top of other servers is not supported. If this is something that you require, please open a discussion for your idea and inquire about how to contribute to development.
+Please note that installing BirdNET-JetsonNano on top of other servers is not supported. If this is something that you require, please open a discussion for your idea and inquire about how to contribute to development.
 
-[Raspberry Pi 3B[+] and 0W2 installation guide available here](https://github.com/mcguirepr89/BirdNET-Pi/wiki/RPi0W2-Installation-Guide)
+[Raspberry Pi 3B[+] and 0W2 installation guide available here](https://github.com/kmugglet/BirdNET-JetsonNano/wiki/RPi0W2-Installation-Guide)
 
 The system can be installed with:
 ```
-curl -s https://raw.githubusercontent.com/mcguirepr89/BirdNET-Pi/main/newinstaller.sh | bash
+curl -s https://raw.githubusercontent.com/kmugglet/BirdNET-JetsonNano/main/newinstaller.sh | bash
 ```
 The installer takes care of any and all necessary updates, so you can run that as the very first command upon the first boot, if you'd like.
 
 The installation creates a log in `$HOME/installation-$(date "+%F").txt`.
 ## Access
-The BirdNET-Pi can be accessed from any web browser on the same network:
+The BirdNET-JetsonNano can be accessed from any web browser on the same network:
 - http://birdnetpi.local
 - Default Basic Authentication Username: birdnet
 - Password is empty by default. Set this in "Tools" > "Settings" > "Advanced Settings"
 
+
+
+
+## Info from the parent github repo for Birdnet-Pi
 Please take a look at the [wiki](https://github.com/mcguirepr89/BirdNET-Pi/wiki) and [discussions](https://github.com/mcguirepr89/BirdNET-Pi/discussions) for information on
 - [making your installation public](https://github.com/mcguirepr89/BirdNET-Pi/wiki/Sharing-Your-BirdNET-Pi)
 - [backing up and restoring your database](https://github.com/mcguirepr89/BirdNET-Pi/wiki/Backup-and-Restore-the-Database)
@@ -122,7 +128,7 @@ Use the web interface and go to "Tools" > "System Controls" > "Update." If you e
 
 ## Uninstallation
 ```
-/usr/local/bin/uninstall.sh && cd ~ && rm -drf BirdNET-Pi
+/usr/local/bin/uninstall.sh && cd ~ && rm -drf BirdNET-JetsonNano
 ```
 
 ## Troubleshooting and Ideas
@@ -137,11 +143,11 @@ I hope that if you find BirdNET-Pi has been worth your time, you will share your
 
 ## Cool Links
 
-- [Marie Lelouche's <i>Out of Spaces</i>](https://www.lestanneries.fr/exposition/marie-lelouche-out-of-spaces/) using BirdNET-Pi in post-sculpture VR! [Press Kit](https://github.com/mcguirepr89/BirdNET-Pi-assets/blob/main/dp_out_of_spaces_marie_lelouche_digital_05_01_22.pdf)
-- [Research on noded BirdNET-Pi networks for farming](https://github.com/mcguirepr89/BirdNET-Pi-assets/blob/main/G23_Report_ModelBasedSysEngineering_FarmMarkBirdDetector_V1__Copy_.pdf)
-- [PixCams Build Guide](https://pixcams.com/building-a-birdnet-pi-real-time-acoustic-bird-id-station/)
+- [Marie Lelouche's <i>Out of Spaces</i>](https://www.lestanneries.fr/exposition/marie-lelouche-out-of-spaces/) using BirdNET-JetsonNano in post-sculpture VR! [Press Kit](https://github.com/mcguirepr89/BirdNET-pi-assets/blob/main/dp_out_of_spaces_marie_lelouche_digital_05_01_22.pdf)
+- [Research on noded BirdNET-JetsonNano networks for farming](https://github.com/mcguirepr89/BirdNET-pi-assets/blob/main/G23_Report_ModelBasedSysEngineering_FarmMarkBirdDetector_V1__Copy_.pdf)
+- [PixCams Build Guide](https://pixcams.com/building-a-BirdNET-JetsonNano-real-time-acoustic-bird-id-station/)
 - <ins>[Core-Electronics](https://core-electronics.com.au/projects/bird-calls-raspberry-pi)</ins> Build Article
-- [RaspberryPi.com Blog Post](https://www.raspberrypi.com/news/classify-birds-acoustically-with-birdnet-pi/)
+- [RaspberryPi.com Blog Post](https://www.raspberrypi.com/news/classify-birds-acoustically-with-BirdNET-Pi/)
 - [MagPi Issue 119 Showcase Article](https://magpi.raspberrypi.com/issues/119/pdf)
 
 

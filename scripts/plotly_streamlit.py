@@ -15,7 +15,7 @@ from sklearn.preprocessing import normalize
 pio.templates.default = "plotly_white"
 
 userDir = os.path.expanduser('~')
-URI_SQLITE_DB = userDir + '/BirdNET-Pi/scripts/birds.db'
+URI_SQLITE_DB = userDir + '/BirdNET-JetsonNano/scripts/birds.db'
 
 st.set_page_config(layout='wide')
 
@@ -314,7 +314,7 @@ if daily is False:
                 except Exception:
                     st.title('RECORDING NOT AVAILABLE :(')
             # try:
-            #     con = sqlite3.connect(userDir + '/BirdNET-Pi/scripts/birds.db')
+            #     con = sqlite3.connect(userDir + '/BirdNET-JetsonNano/scripts/birds.db')
             #     cur = con.cursor()
             cola, colb, colc, cold = st.columns((3, 1, 1, 1))
             with colb:
@@ -324,7 +324,7 @@ if daily is False:
                     verified = st.radio("Verification", ['True Positive', 'False Positive'])
 
                     if verified == "False Positive":
-                        df_names = pd.read_csv(userDir + '/BirdNET-Pi/model/labels.txt', delimiter='_', names=['Sci_Name', 'Com_Name'])
+                        df_names = pd.read_csv(userDir + '/BirdNET-JetsonNano/model/labels.txt', delimiter='_', names=['Sci_Name', 'Com_Name'])
                         df_unknown = pd.DataFrame({"Sci_Name": ["UNKNOWN"], "Com_Name": ["UNKNOWN"]})
                         df_names = pd.concat([df_unknown, df_names], ignore_index=True)
                         with cold:

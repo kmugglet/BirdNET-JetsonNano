@@ -12,7 +12,7 @@ if (file_exists('./scripts/thisrun.txt')) {
   } 
 
   if($config["SITE_NAME"] == "") {
-    $site_name = "BirdNET-Pi";
+    $site_name = "BirdNET-JetsonNano";
   } else {
     $site_name = $config['SITE_NAME'];
   }
@@ -209,7 +209,7 @@ if(isset($_GET['ajax_detections']) && $_GET['ajax_detections'] == "true"  ) {
     } else {
       // only open the file once per script execution
       if(!isset($lines)) {
-        $lines = file($home."/BirdNET-Pi/model/labels_flickr.txt");
+        $lines = file($home."/BirdNET-JetsonNano/model/labels_flickr.txt");
       }
       // convert sci name to English name
       foreach($lines as $line){ 
@@ -316,7 +316,7 @@ die();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BirdNET-Pi DB</title>
+  <title>BirdNET-JetsonNano DB</title>
   <style>
 </style>
 </head>

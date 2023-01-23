@@ -15,7 +15,7 @@ if [ "${used//%}" -ge 95 ]; then
             if [ $iter -ge $filestodelete ]; then
                 break
             fi
-            if ! grep -qxFe "$i" $HOME/BirdNET-Pi/scripts/disk_check_exclude.txt; then
+            if ! grep -qxFe "$i" $HOME/BirdNET-JetsonNano/scripts/disk_check_exclude.txt; then
                 rm "$i"
             fi
             ((iter++))

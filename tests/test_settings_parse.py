@@ -32,7 +32,7 @@ AUDIOFMT=mp3
 DATABASE_LANG=en
 LAST_RUN=
 THIS_RUN=
-IDFILE=/home/pi/BirdNET-Pi/IdentifiedSoFar.txt"""
+IDFILE=/home/pi/BirdNET-JetsonNano/IdentifiedSoFar.txt"""
 
     filename = tempfile.NamedTemporaryFile(suffix='.txt', delete=False)
     with open(filename.name, 'w', encoding='utf8', newline='') as f:

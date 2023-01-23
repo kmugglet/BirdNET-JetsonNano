@@ -5,8 +5,8 @@ $user = trim($user);
 $home = shell_exec("awk -F: '/1000/{print $6}' /etc/passwd");
 $home = trim($home);
 if(!isset($_SESSION['behind'])) {
-  $fetch = shell_exec("sudo -u".$user." git -C ".$home."/BirdNET-Pi fetch 2>&1");
-  $_SESSION['behind'] = trim(shell_exec("sudo -u".$user." git -C ".$home."/BirdNET-Pi status | sed -n '2 p' | cut -d ' ' -f 7"));
+  $fetch = shell_exec("sudo -u".$user." git -C ".$home."/BirdNET-JetsonNano fetch 2>&1");
+  $_SESSION['behind'] = trim(shell_exec("sudo -u".$user." git -C ".$home."/BirdNET-JetsonNano status | sed -n '2 p' | cut -d ' ' -f 7"));
   if(isset($_SESSION['behind'])&&intval($_SESSION['behind']) >= 99) {?>
   <style>
   .updatenumber { 
@@ -161,7 +161,7 @@ if(isset($_GET['view'])){
       $str = preg_replace('/^\h*\v+/m', '', $str);
       file_put_contents("$file", "$str");
       foreach($_GET['species'] as $selectedOption) {
-        $content = file_get_contents("../BirdNET-Pi/include_species_list.txt");
+        $content = file_get_contents("../BirdNET-JetsonNano/include_species_list.txt");
         $newcontent = str_replace($selectedOption, "", "$content");
         file_put_contents("./scripts/include_species_list.txt", "$newcontent");
       }

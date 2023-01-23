@@ -29,7 +29,7 @@
 # main v.11
 - New "Reconfigure System" GUI
 - labels.txt language support for 20+ languages
-  - Tool in `birdnet-pi-config` for now
+  - Tool in `BirdNET-JetsonNano-config` for now
   - Added German top.html and menu.html
 
 # main v.10 & pre-installed image notes
@@ -60,7 +60,7 @@
 - Systemd networkd supported
 
 # newinstaller v0.5
-- New `birdnet-pi-config` tool meant for:
+- New `BirdNET-JetsonNano-config` tool meant for:
   - SSH-only installation
   - Reconfiguring birdnet.conf
   - Configuring system settings
